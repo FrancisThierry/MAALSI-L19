@@ -17,3 +17,5 @@ df_basics = df_basics.withColumn(
     df_basics["startYear"].cast("integer")
 )
 ```
+## DAG
+Directed Acyclic Graph.En français, on le traduit par Graphe Acyclique Dirigé. C'est la techologie utiisée par Spark.

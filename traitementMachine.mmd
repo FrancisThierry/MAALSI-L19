@@ -1,0 +1,17 @@
+graph TD
+    Data[(Données Massives)] --> Split{Répartiteur / Master}
+    
+    subgraph "Cluster de Calcul"
+        Split --> Node1[Nœud 1]
+        Split --> Node2[Nœud 2]
+        Split --> Node3[Nœud 3]
+        Split --> NodeN[Nœud N...]
+        
+        Node1 --> P1[Résultat Partiel 1]
+        Node2 --> P2[Résultat Partiel 2]
+        Node3 --> P3[Résultat Partiel 3]
+        NodeN --> PN[Résultat Partiel N]
+    end
+    
+    P1 & P2 & P3 & PN --> Aggregator[Agrégateur Final]
+    Aggregator --> Output[/Résultat Final/]

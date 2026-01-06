@@ -1,0 +1,17 @@
+graph LR
+    subgraph "Hadoop MapReduce (Rigide)"
+    M1[Map] --> D1[(Disque)]
+    D1 --> R1[Reduce]
+    R1 --> D2[(Disque)]
+    D2 --> M2[Map 2]
+    end
+
+    subgraph "Apache Spark (Flexible - DAG)"
+    S1[Source] --> Op1[Map]
+    Op1 --> Op2[Filter]
+    Op2 --> Op3[Map]
+    Op3 --> Op4[Reduce]
+    Op4 --> Final[(Destination)]
+    end
+    
+  

@@ -1,0 +1,28 @@
+graph LR
+    Input[(Input Data)] --> MapPhase
+
+    subgraph "Phase MAP"
+    MapPhase[Splitting] --> M1[Mapper 1]
+    MapPhase --> M2[Mapper 2]
+    M1 --> KV1[K1, V1]
+    M2 --> KV2[K2, V2]
+    end
+
+    subgraph "Phase SHUFFLE & SORT"
+    KV1 --> Shuffle{Regroupement par Clé}
+    KV2 --> Shuffle
+    end
+
+    subgraph "Phase REDUCE"
+    Shuffle --> R1[Reducer 1]
+    Shuffle --> R2[Reducer 2]
+    R1 --> Res1[Résultat A]
+    R2 --> Res2[Résultat B]
+    end
+
+    Res1 & Res2 --> Final[(Output Final)]
+
+    style Shuffle fill:#f9f,stroke:#333,stroke-dasharray: 5 5
+    style MapPhase fill:#bbf
+    style R1 fill:#bfb
+    style R2 fill:#bfb
