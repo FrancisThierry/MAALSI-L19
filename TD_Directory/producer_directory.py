@@ -54,7 +54,8 @@ def list_recursive_kafka(path, indent=0):
         print(f"{'  ' * indent}[!] Répertoire introuvable.")
 
 # --- Exécution ---
-myPath = "C:/projets/MAALSI-L19"
+myPath = "C:/Users/thier/OneDrive/Documents"
+# myPath = "C:/projets/MAALSI-L19"
 
 print(f"Début de l'envoi avec délais aléatoires pour : {myPath}")
 list_recursive_kafka(myPath)
